@@ -1,4 +1,5 @@
 import React from 'react'
+import FeatureComponents from './components/FeatureComponents';
 // import styled from 'styled-components';
 import HeroSection from './components/HeroSection';
 import Services from './components/Services';
@@ -14,6 +15,7 @@ const Home = () => {
     // <Wrapper className="test">Home</Wrapper>
     <>
     <HeroSection myData={data}/>
+    <FeatureComponents />
     <Services/>
     <Trusted/>
     </>

@@ -17,7 +17,7 @@ const initialState = {
 //* step 2: create Provider & inclose inside ( <AppProvider> <App/> </AppProvider> )
 const AppProvider = ({ children }) => {
 
-    //! "productReducer" is called with name "reducer".
+    //! "productReducer" is called with as name "reducer".
     const [state, dispatch] = useReducer(reducer , initialState);
 
     const getProduct = async (url) =>{
