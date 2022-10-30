@@ -3,7 +3,9 @@ import HeroSection from './components/HeroSection'
 import {  useProductContext } from './context/productcontext';
 
 const About = () => {
-  const {myName} = useProductContext();
+  const { ...state } = useProductContext();
+  console.log('About' , state);
+
   const data = {
     name : "Thapa store",
     img: "images/hero.jpg"
@@ -11,7 +13,7 @@ const About = () => {
 
   return (
     <>
-    {myName}
+    {/* {myName} */}
     <HeroSection myData={data} />
     </>
   )
