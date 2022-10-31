@@ -4,7 +4,7 @@ import {  useProductContext } from './context/productcontext';
 
 const About = () => {
   const { ...state } = useProductContext();
-  console.log('About' , state);
+  console.log('About' , state );
 
   const data = {
     name : "Thapa store",

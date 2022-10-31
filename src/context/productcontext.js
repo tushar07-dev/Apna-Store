@@ -8,16 +8,18 @@ const AppContext = createContext();
 const API = `https://api.pujakaitem.com/api/products`;
 
 const initialState = {
-    isLoading: false,
-    isError: false,
-    products : [], //display all Products on Product page.
-    featureProducts : [], //display specific Features on Home page
+    isLoading: false,         //load for all product
+    isError: false,           //load for Error page
+    products : [],            //display all Products on Product page.
+    featureProducts : [],     //display specific Features on Home page
+    isSingleLoading : false,  //Sinlge page is Loading
+    singleProduct : {},       //Single product data in Object dataStructure
 }
 
 //* step 2: create Provider & inclose inside ( <AppProvider> <App/> </AppProvider> )
 const AppProvider = ({ children }) => {
 
-    //! "productReducer" is called with as name "reducer".
+//! "productReducer" is called with as name "reducer".
     const [state, dispatch] = useReducer(reducer , initialState);
 
     const getProduct = async (url) =>{
@@ -37,6 +39,20 @@ const AppProvider = ({ children }) => {
         }
     }
 
+// ! 2nd api call for Single-Product.
+
+    const getSingleProduct = async (url) =>{
+      dispatch({ type:"SET_SINGLE_LOADING" });
+      try{
+        const res = await axios.get(url);
+        const singleProduct = await res.data;
+        dispatch({ type:"SET_SINGLE_PRODUCT" , payload: singleProduct });
+      }
+      catch(error){
+        dispatch({ type:"SET_SINGLE_ERROR" });
+      }
+    };
+
 useEffect(() => {
   getProduct(API);
 
@@ -44,7 +60,7 @@ useEffect(() => {
 
     
   return (
-    <AppContext.Provider value={{...state }}>
+    <AppContext.Provider value={{...state , getSingleProduct}}>
       {children}
     </AppContext.Provider>
   );
