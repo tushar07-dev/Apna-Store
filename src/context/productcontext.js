@@ -30,7 +30,7 @@ const AppProvider = ({ children }) => {
             const res = await axios.get(url);
             // console.log(res);
             const products = await res.data;
-            console.log( "AllProducts" ,products);
+            // console.log( "AllProducts" ,products);
             dispatch({ type:"SET_API_DATA" , payload: products });
         }
         catch(error){
