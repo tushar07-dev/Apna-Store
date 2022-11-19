@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import FormatPrice from '../Helper/FormatPrice';
 
 const Product = (props) => {
-    console.log("props" ,props.name);
+    // console.log("props" ,props.name);
     const {id, name, image, price, category } = props
   return (
     <NavLink to={`/singleproduct/${id}`}>
