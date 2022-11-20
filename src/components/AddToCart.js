@@ -1,29 +1,27 @@
-import React from 'react'
-import { useState } from 'react';
-import {FaCheck} from "react-icons/fa";
-import { NavLink } from 'react-router-dom';
+import { useState } from "react";
 import styled from "styled-components";
-import CartAmountToggle from './CartAmountToggle';
-import {Button} from "../styles/Button";
+import { FaCheck } from "react-icons/fa";
+import CartAmountToggle from "./CartAmountToggle";
+import { NavLink } from "react-router-dom";
+import { Button } from "../styles/Button";
 
-const AddToCart = ({product}) => {
-    console.log("product" , product);
-    const { id, colors , stock }  = product;
-    console.log("stock colors" ,stock , colors);
+const AddToCart = ({ product }) => {
+  const { id, colors, stock } = product;
 
-    const [color , setColor ] = useState(colors[0]);
-    const [amount , setAmount ] = useState(1);
-    const setIncrement = () => {
-      amount < stock ? setAmount(amount + 1) : setAmount(stock);
+  const [color, setColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
 
-    }
-    const setDecrement = () => {
-      amount > 1 ? setAmount(amount - 1) : setAmount(1);
-    }
+  const setDecrease = () => {
+    amount > 1 ? setAmount(amount - 1) : setAmount(1);
+  };
+
+  const setIncrease = () => {
+    amount < stock ? setAmount(amount + 1) : setAmount(stock);
+  };
+
   return (
     <Wrapper>
-
-<div className="colors">
+      <div className="colors">
         <p>
           Color:
           {colors.map((curColor, index) => {
@@ -39,23 +37,20 @@ const AddToCart = ({product}) => {
           })}
         </p>
       </div>
-      {/* add To Cart */}
 
+      {/* add to cart  */}
       <CartAmountToggle
-                        amount={amount}
-                        setIncrement={setIncrement}
-                        setDecrement={setDecrement}
-      
-      
+        amount={amount}
+        setDecrease={setDecrease}
+        setIncrease={setIncrease}
       />
 
       <NavLink to="/cart">
-          <Button className="btn"> ADD TO  CART</Button>
+        <Button className="btn">Add To Cart</Button>
       </NavLink>
-
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   .colors p {
@@ -73,17 +68,21 @@ const Wrapper = styled.section`
     outline: none;
     opacity: 0.5;
     cursor: pointer;
+
     &:hover {
       opacity: 1;
     }
   }
+
   .active {
     opacity: 1;
   }
+
   .checkStyle {
     font-size: 1rem;
     color: #fff;
   }
+
   /* we can use it as a global one too  */
   .amount-toggle {
     margin-top: 3rem;
@@ -92,16 +91,17 @@ const Wrapper = styled.section`
     justify-content: space-around;
     align-items: center;
     font-size: 1.4rem;
+
     button {
       border: none;
       background-color: #fff;
       cursor: pointer;
     }
+
     .amount-style {
       font-size: 2.4rem;
       color: ${({ theme }) => theme.colors.btn};
     }
   }
 `;
-
-export default AddToCart
+export default AddToCart;
