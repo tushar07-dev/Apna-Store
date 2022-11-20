@@ -34,21 +34,20 @@ const AddToCart = ({product}) => {
                 className={color === curColor ? "btnStyle active" : "btnStyle"}
                 onClick={() => setColor(curColor)}>
                 {color === curColor ? <FaCheck className="checkStyle" /> : null}
-
               </button>
             );
           })}
         </p>
       </div>
-
-
       {/* add To Cart */}
 
       <CartAmountToggle
                         amount={amount}
                         setIncrement={setIncrement}
                         setDecrement={setDecrement}
-                        />
+      
+      
+      />
 
       <NavLink to="/cart">
           <Button className="btn"> ADD TO  CART</Button>
