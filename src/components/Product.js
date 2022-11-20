@@ -18,9 +18,8 @@ const Product = (props) => {
                     <h3>{name}</h3>
                     
                     <p className="card-data--price">
-                        {
-                            
-                            <FormatPrice price={price } />
+                        { 
+                            <FormatPrice price={price} />
                         }
                     </p>
                 </div>
