@@ -1,15 +1,14 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import styled from 'styled-components'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-const PageNavigation = ( {title} ) => {
-    
+const PageNavigation = ({ title }) => {
   return (
-        <Wrapper>
-            <NavLink to="/">HOME</NavLink> / {title}
-        </Wrapper>
-    )
-}
+    <Wrapper>
+      <NavLink to="/">Home</NavLink>/{title}
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
   height: 10rem;
@@ -19,9 +18,10 @@ const Wrapper = styled.section`
   align-items: center;
   font-size: 3.2rem;
   padding-left: 1.2rem;
+
   a {
     font-size: 3.2rem;
   }
 `;
 
-export default PageNavigation
+export default PageNavigation;
