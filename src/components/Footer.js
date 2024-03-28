@@ -27,8 +27,8 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3>Thapa Technical</h3>
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
+              <h3>Apna Store</h3>
+              <p>Best place to perchase elecronic goods </p>
             </div>
             <div className="footer-subscribe">
               <h3>Subscribe to get important updates</h3>
@@ -49,8 +49,10 @@ const Footer = () => {
                 </div>
                 <div>
                   <a
-                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
-                    target="_blank">
+                    href="https://www.youtube.com/channel/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >
                     <FaYoutube className="icons" />
                   </a>
                 </div>
@@ -66,7 +68,7 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} ThapaTechnical. All Rights Reserved
+                @{new Date().getFullYear()}. All Rights Reserved
               </p>
               <div>
                 <p>PRIVACY POLICY</p>

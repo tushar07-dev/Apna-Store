@@ -1,4 +1,4 @@
-# Welcome to Thapa Technical React Ecommerce Website Series
+# Welcome to Apna Technical React Ecommerce Website 
 
 ## Follow the 3 Steps and you are good to go. 
 

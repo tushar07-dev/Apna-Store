@@ -38,43 +38,45 @@ const Contact = () => {
       <h2 className="common-heading">Contact page</h2>
 
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.2800012117013!2d73.12487761453248!3d19.007379559065885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e850fd08213d%3A0xe57008fded20f747!2sOmkar%20Bramha!5e0!3m2!1sen!2sin!4v1666928866763!5m2!1sen!2sin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.265588856342!2d73.91455641541671!3d18.562061287384868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c147b8b3a3bf%3A0x6f7fdcc8e4d6c77e!2sPhoenix%20Marketcity%20-%20Viman%20Nagar!5e0!3m2!1sen!2sin!4v1664345115285!5m2!1sen!2sin"
         width="100%"
         height="400"
-        style={{border:0}}
+        style={{ border: 0 }}
         allowFullScreen=""
         loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+        referrerPolicy="no-referrer-when-downgrade"></iframe>
 
       <div className="container">
         <div className="contact-form">
-          <form method="POST" action="https://formspree.io/f/xeqdrpng" className="contact-inputs">
-            <input type="text"
-                   placeholder="username"
-                   name="username"
-                   required
-                   autocomplete="off"
-                   
-                   />
-            
-            <input type="email" 
-                   placeholder="email"
-                   name="email"
-                   required
-                   autocomplete="off"
-                   
-                   />
-            <textarea 
-                   name="Message"
-                   cols="30"
-                   rows="10"
-                   required
-                   autocomplete="off"
-                   placeholder="Enter your Message"
-                   />
+          <form
+            action="https://formspree.io/f/xeqdgwnq"
+            method="POST"
+            className="contact-inputs">
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              required
+              autoComplete="off"
+            />
 
-            <input type="submit" value="send"/>
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              autoComplete="off"
+              required
+            />
+
+            <textarea
+              name="Message"
+              cols="30"
+              rows="10"
+              required
+              autoComplete="off"
+              placeholder="Enter you message"></textarea>
+
+            <input type="submit" value="send" />
           </form>
         </div>
       </div>

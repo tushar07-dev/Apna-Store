@@ -96,7 +96,6 @@ ${"" /* resuable code section  */}
 
 .grid-two-column {
   grid-template-columns: repeat(2, 1fr);
-
 }
 
 .grid-three-column {
@@ -105,6 +104,20 @@ ${"" /* resuable code section  */}
 
 .grid-four-column{
    grid-template-columns: 1fr 1.2fr .5fr .8fr ;
+}
+
+.image-container {
+  width: 200px; /* Adjust the width as needed */
+  height: 100px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+
+.cropped-image {
+  width: 100%; /* Ensure the image fills the container */
+  height: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Crop the image while maintaining its aspect ratio */
+  filter: blur(0px);
+  clip-path: polygon(0px 0px, 100% 0, 100% 80%, 0 90%);
 }
 
 .grid-five-column{
@@ -156,7 +169,6 @@ input, textarea{
     font-size: 1.8rem;
     cursor: pointer;
     }
-
 
 @media (max-width: ${({ theme }) => theme.media.tab}) {
     .container {
