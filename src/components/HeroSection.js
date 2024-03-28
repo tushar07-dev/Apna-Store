@@ -17,7 +17,7 @@ const HeroSection = ({ myData }) => {
               atque temporibus veniam doloribus libero ad error omnis voluptates
               animi! Suscipit sapiente.
             </p>
-            <NavLink>
+            <NavLink to="/products">
               <Button>show now</Button>
             </NavLink>
           </div>
@@ -26,7 +26,7 @@ const HeroSection = ({ myData }) => {
             <figure>
               <img
                 src="images/hero.jpg"
-                alt="hero-section-photo"
+                alt="hero-section-photos"
                 className="img-style"
               />
             </figure>
